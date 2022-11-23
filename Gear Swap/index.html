@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gear Swap!</title>
     <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="assets/js/main.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="header-content"><h1 id="main-title"> Gear Swap </h1>
+            <div class="header-content"><h1 id="main-title"><a href="#"> Gear Swap </a></h1>
             </div>
 
-            <div class="header-content">
-                <span> Location </span>
-                <span> Length </span>
+            <div class="header-content" id="main-details">
+                <span><a href="#"> Location </a></span>
+                <span><a href="#"> Length </a></span>
             </div>
 
-            <div class="header-content"> 
-                <span> Loan Your Instrument </span>
-                <span> Light/Dark Mode </span>
-                <span> Sign In </span>
+            <div class="header-content" id="main-setup"> 
+                <span><a href="#"> Loan Your Instrument </a></span>
+                <button id="theme-switcher" onclick="myFunction()"> Light/Dark Mode </button>
+                <span><a href="#"> Sign In </a></span>
             </div>
 
         </nav>
@@ -29,12 +30,12 @@
         <div class="gearSelect">
 
             <li class="gearGenre">
-                <ul class="gearFlex"> Brass </ul>
-                <ul class="gearFlex"> Woodwinds </ul>
-                <ul class="gearFlex"> Percussion </ul>
-                <ul class="gearFlex"> String </ul>
-                <ul class="gearFlex"> Keyboard </ul>
-                <ul class="gearFlex"> Electronic </ul>
+                <ul class="gearFlex" id="brassLine" onclick="myBrass()"><a href="#"> Brass </a></ul>
+                <ul class="gearFlex" id="windLine" onclick="myWind()"><a href="#"> Woodwinds </a></ul>
+                <ul class="gearFlex" id="percussionLine" onclick="myPerc()"><a href="#"> Percussion </a></ul>
+                <ul class="gearFlex" id="stringLine" onclick="myString()"><a href="#"> String </a></ul>
+                <ul class="gearFlex" id="keyLine" onclick="myKey()"><a href="#"> Keyboard </a></ul>
+                <ul class="gearFlex" id="electronicLine" onclick="myElect()"><a href="#"> Electronic </a></ul>
 
             </li>
         </div>
@@ -43,28 +44,100 @@
 
     <main class="groupA">
 
-        <div class="picsA">
-            <img src="assets/images/trumpet.jpeg" alt="Trumpet">
+        <div class="picsA" id="trumpet"><a href="#">
+            <img src="assets/images/trumpet.jpeg" alt="Trumpet"></a>
         </div>
 
-        <div class="picsA">
-            <img src="assets/images/trumpet.jpeg" alt="Trumpet">
+        <div class="picsA" id="horn"><a href="#">
+            <img src="assets/images/horn.avif" alt="French Horn"></a>
         </div>
 
-        <div class="picsA">
-            <img src="assets/images/trumpet.jpeg" alt="Trumpet">
+        <div class="picsA" id="trombone"><a href="#">
+            <img src="assets/images/trombone.jpeg" alt="Trombone"></a>
         </div>
 
-        <div class="picsA">
-            <img src="assets/images/trumpet.jpeg" alt="Trumpet">
+        <div class="picsA" id="tuba"><a href="#">
+            <img src="assets/images/tuba.avif" alt="Tuba"></a>
         </div>
 
-        <div class="picsA">
-            <img src="assets/images/trumpet.jpeg" alt="Trumpet">
+        <div class="picsB" id="flute"><a href="#">
+            <img  class="picsB" src="assets/images/flute.avif" alt="Flute"></a>
         </div>
 
-        <div class="picsA">
-            <img src="assets/images/trumpet.jpeg" alt="Trumpet">
+        <div class="picsB" id="clarinet"><a href="#">
+            <img src="assets/images/clarinet.jpeg" alt="Clarinet"></a>
+        </div>
+
+        <div class="picsB" id="altoSax"><a href="#">
+            <img src="assets/images/alto_sax.avif" alt="Alto Sax"></a>
+        </div>
+
+        <div class="picsB" id="bassoon"><a href="#">
+            <img src="assets/images/bassoon.jpeg" alt="Bassoon"></a>
+        </div>
+
+        <div class="picsC" id="drumset"><a href="#">
+            <img src="assets/images/drumset.jpeg" alt="Drumset"></a>
+        </div>
+
+        <div class="picsC" id="snare"><a href="#">
+            <img src="assets/images/snare.avif" alt="Snare Drum"></a>
+        </div>
+
+        <div class="picsC" id="tambourine"><a href="#">
+            <img src="assets/images/tambourine.avif" alt="Tambourine"></a>
+        </div>
+
+        <div class="picsC" id="timpani"><a href="#">
+            <img src="assets/images/timpani.jpeg" alt="Timpani"></a>
+        </div>
+
+        <div class="picsD" id="violin"><a href="#">
+            <img src="assets/images/violin.avif" alt="Violin"></a>
+        </div>
+
+        <div class="picsD" id="ukulele"><a href="#">
+            <img src="assets/images/ukulele.avif" alt="Ukulele"></a>
+        </div>
+
+        <div class="picsD" id="cello"><a href="#">
+            <img src="assets/images/cello.jpeg" alt="Cello"></a>
+        </div>
+
+        <div class="picsD" id="guitar"><a href="#">
+            <img src="assets/images/guitar.jpeg" alt="Guitar"></a>
+        </div>
+
+        <div class="picsE" id="piano"><a href="#">
+            <img src="assets/images/piano.jpeg" alt="Piano"></a>
+        </div>
+
+        <div class="picsE" id="accordion"><a href="#">
+            <img src="assets/images/accordion.avif" alt="Accordion"></a>
+        </div>
+
+        <div class="picsE" id="synthesizer"><a href="#">
+            <img src="assets/images/synthesizer.jpeg" alt="Synthesizer"></a>
+        </div>
+
+        <div class="picsE" id="upright"><a href="#">
+            <img src="assets/images/upright_piano.avif" alt="Upright Piano"></a>
+        </div>
+
+        <div class="picsF" id="pedal"><a href="#">
+            <img src="assets/images/pedals.avif" alt="Pedal Board"></a>
+        </div>
+
+        <div class="picsF" id="soundBoard"><a href="#">
+            <img src="assets/images/soundboard.avif" alt="Sound Board"></a>
+        </div>
+
+        <div class="picsF" id="theremin"><a href="#">
+            <img src="assets/images/theremin.jpeg" alt="Theremin"></a>
+        </div>
+
+        <div class="picsF" id="turntable"><a href="#">
+            <img src="assets/images/turntable.jpeg" alt="turntable"></a>
         </div>
 
     </main>
@@ -74,17 +147,17 @@
     <footer class="footer-content">
 
         <div class="footer-div">
-            <span> &#169; 2022 Denver Pascua </span>
-            <span> Privacy </span>
-            <span> Terms </span>
-            <span> Sitemap </span>
-            <span> Destinations </span>
+            <span><a href="#"> &#169; 2022 Denver Pascua </a></span>
+            <span><a href="#"> Privacy </a></span>
+            <span><a href="#"> Terms </a></span>
+            <span><a href="#"> Sitemap </a></span>
+            <span><a href="#"> Destinations </a></span>
         </div>
 
         <div class="footer-div">
-            <span> English </span>
-            <span> $ USD </span>
-            <span> Support and Resources </span>
+            <span><a href="#"> English </a></span>
+            <span><a href="#"> $ USD </a></span>
+            <span><a href="#"> Support and Resources </a></span>
         </div>
 
     </footer>

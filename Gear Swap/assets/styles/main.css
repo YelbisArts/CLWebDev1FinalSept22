@@ -1,16 +1,24 @@
 /* Border Check */
 
 html, nav, span, h1, div, header, footer { 
-    outline: 1px solid rgb(195, 76, 228);
-    outline-offset: -1px;
+    /* outline: 1px solid rgb(195, 76, 228);
+    outline-offset: -1px; */
     display: flex;
   }
 
 /* Body and Formatting */
 
+/* [data-theme="dark"], a {
+    --background-color: #101010;
+    --text-color: #fff;
+} */
+
 body {
     width: 100%;
     height: 100%;
+    /* background-color: var(--background-color);
+    color: var(--text-color); */
+    background-color: rgb(123, 233, 250);
 }
 
 main {
@@ -19,9 +27,28 @@ main {
     padding-bottom: 10vh;
 }
 
-.clear {
-    clear: both;
-    height: 7vh;
+/* Light and Dark Mode */
+
+.dark-mode {
+    background-color: rgb(4, 55, 63);
+    color: white;
+}
+
+/* Links and General Text Styles */
+a {
+    text-decoration: none;
+    color: rgb(255, 236, 209);
+
+}
+
+a:hover {
+    color: rgb(255, 206, 137);
+    font-weight: 900;
+}
+
+a:active {
+    color: rgb(217, 217, 217);
+    font-weight: 700;
 }
 
 /* Header */
@@ -32,6 +59,7 @@ header {
     display: flex;
     flex-flow: column;
     position: fixed;
+    background-color: rgb(21, 97, 109);
 }
 
 nav {
@@ -47,6 +75,16 @@ nav {
 
 .header-content > span {
     padding: 0 4px;
+}
+
+#main-details {
+    width: 125px;
+    justify-content: space-between;
+}
+
+#main-setup {
+    width: 350px;
+    justify-content: space-between;
 }
 
 .gearSelect {
@@ -69,15 +107,17 @@ nav {
     justify-content: space-around;
 }
 
-.picsA {
+.picsA, .picsB, .picsC, .picsD, .picsE, .picsF {
     width: 40vw;
     height: 40vw;
+    justify-content: center;
+    align-items: center;
 }
 
-.picsA > img {
-    width: 40vw;
-    height: 40vw;
-    object-fit: contain;
+.picsA > a > img, .picsB > a > img, .picsC > a > img, .picsD > a > img, .picsE > a > img, .picsF > a > img {
+    width: 35vw;
+    height: 30vw;
+    object-fit: cover;
 }
 
 
@@ -85,14 +125,74 @@ nav {
 
 .footer-content {
     width: 100%;
-    height: 7vh;
+    height: 12vh;
     position: sticky;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    background-color: rgb(21, 97, 109);
 }
 
 .footer-div {
-    width: 30%;
-    height: 7vh;
+    width: 50%;
+    height: 12vh;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 992px) {
+    header, nav, .gearGenre {
+        display: flex;
+        flex-flow: wrap;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    header {
+        height: 30vh;
+        display: flex;
+        flex-flow: column;
+        position: sticky;
+    }
+
+    main {
+        padding: 10px 0;
+    }
+
+    .groupA {
+        padding-top: 0 vh;
+    }
+
+    .gearSelect, .gearGenre {
+        background-color: rgb(21, 97, 109);
+    }
+
+    .footer-content {
+        height: 20vh;
+        display: flex;
+        justify-content: space-evenly;
+        flex-flow: wrap;
+        align-items: center;
+    }
+
+    .footer-div {
+        flex-flow: column;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    header {
+        height: 30vh;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    main {
+        padding-top: 0 vh;
+    }
+
+    .gearSelect, .gearGenre {
+        background-color: rgb(21, 97, 109);
+    }
 }
